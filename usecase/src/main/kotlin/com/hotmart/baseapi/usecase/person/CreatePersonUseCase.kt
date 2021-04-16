@@ -16,3 +16,4 @@ class CreatePersonUseCase(
         return UseCaseResponse.setSuccess(PersonResponse(person))
     }
 }
+
