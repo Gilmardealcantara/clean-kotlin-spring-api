@@ -7,4 +7,5 @@ interface IPersonRepository {
     fun save(person: Person)
     fun update(person: Person)
     fun findById(id: UUID): Optional<Person>
+    fun findAll(): Collection<Person>
 }

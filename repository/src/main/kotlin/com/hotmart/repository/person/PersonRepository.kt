@@ -29,4 +29,8 @@ class PersonRepository : IPersonRepository {
         val person = people.find { it.id == id }
         return Optional.ofNullable(person)
     }
+
+    override fun findAll(): Collection<Person> {
+        return people.toList()
+    }
 }
