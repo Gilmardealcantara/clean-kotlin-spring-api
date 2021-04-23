@@ -1,5 +1,6 @@
 package com.hotmart.baseapi.application.controller
 
+import com.hotmart.baseapi.application.config.UseCaseResponseConverter
 import com.hotmart.baseapi.usecase.person.IGetAllPersonsUseCase
 import com.hotmart.baseapi.usecase.person.IGetPersonByIdUseCase
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,17 +13,14 @@ import java.util.*
 
 @RestController
 @RequestMapping("/persons")
-open class PersonController(
+class PersonController(
     private val getAllUseCase: IGetAllPersonsUseCase,
     private val getPersonByIdUseCase: IGetPersonByIdUseCase
 ) {
     @GetMapping
-    fun getAll(): ResponseEntity<*> {
-        return ResponseEntity.ok(getAllUseCase.execute())
-    }
+    fun getAll(): ResponseEntity<*> = getAllUseCase.execute().let { UseCaseResponseConverter.convert(it) }
 
     @GetMapping("{id}")
-    fun get(@PathVariable id: UUID): ResponseEntity<*> {
-        return ResponseEntity.ok(getPersonByIdUseCase.execute(id))
-    }
+    fun get(@PathVariable id: UUID): ResponseEntity<*> =
+        getPersonByIdUseCase.execute(id).let { UseCaseResponseConverter.convert(it) }
 }
