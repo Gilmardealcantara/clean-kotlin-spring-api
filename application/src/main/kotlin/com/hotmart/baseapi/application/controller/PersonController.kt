@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/persons")
-class PersonController @Autowired constructor(
+open class PersonController(
     private val getAllUseCase: IGetAllPersonsUseCase
 ) {
     @GetMapping
