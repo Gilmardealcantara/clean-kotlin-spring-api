@@ -8,7 +8,11 @@ import java.util.*
 
 @Repository
 class PersonRepository : IPersonRepository {
-    private val people: MutableList<Person> = mutableListOf()
+    private val people: MutableList<Person> = mutableListOf(
+        Person(UUID.randomUUID(), "Gilmar"),
+        Person(UUID.randomUUID(), "Maria"),
+        Person(UUID.randomUUID(), "Joelma")
+    )
 
     override fun save(person: Person) {
         if (people.any { it.id == person.id })
