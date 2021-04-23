@@ -1,17 +1,18 @@
-package com.hotmart.repository.person
+package com.hotmart.baseapi.repository.person
 
 import com.hotmart.baseapi.domain.entity.Person
 import com.hotmart.baseapi.domain.service.IPersonRepository
+import org.springframework.stereotype.Repository
 import java.lang.IllegalArgumentException
 import java.util.*
 
+@Repository
 class PersonRepository : IPersonRepository {
     private val people: MutableList<Person> = mutableListOf()
 
     override fun save(person: Person) {
         if (people.any { it.id == person.id })
             throw IllegalArgumentException("people already exists")
-
         people.add(person)
     }
 

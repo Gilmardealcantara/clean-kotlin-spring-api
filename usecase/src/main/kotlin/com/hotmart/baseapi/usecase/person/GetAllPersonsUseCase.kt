@@ -11,11 +11,10 @@ interface IGetAllPersonsUseCase: IUseCaseOnlyResponse<Collection<PersonResponse>
 
 @Service
 open class GetAllPersonsUseCase(
-//    private val repository: IPersonRepository
+    private val repository: IPersonRepository
 ) : IGetAllPersonsUseCase {
     override fun execute(): UseCaseResponse<Collection<PersonResponse>> {
-//        val all:Collection<Person> = repository.findAll()
-        val all:Collection<Person> = emptyList()
+        val all:Collection<Person> = repository.findAll()
         return UseCaseResponse.setSuccess(all.map { PersonResponse(it) })
     }
 }
