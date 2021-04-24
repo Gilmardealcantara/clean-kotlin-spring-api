@@ -14,6 +14,6 @@ data class PersonDataMapper(
     val id: UUID,
     val name: String
 ) {
-    fun toModel(): Person = Person(id, name)
     constructor(person: Person) : this(person.id, person.name)
+    fun toModel(): Person = Person(id, name)
 }

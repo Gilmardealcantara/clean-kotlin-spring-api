@@ -17,6 +17,6 @@ internal class CreatePersonUseCaseTest {
         val useCase = CreatePersonUseCase(repository)
         val response = useCase.execute(CreatePersonRequest("Gilmar"))
 
-        Assertions.assertThat(response.type).isEqualTo(UseCaseResponseType.SUCCESS)
+        Assertions.assertThat(response.type).isEqualTo(UseCaseResponseType.CREATED_SUCCESS)
     }
 }
