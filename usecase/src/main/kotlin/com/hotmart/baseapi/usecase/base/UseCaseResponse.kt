@@ -10,6 +10,9 @@ class UseCaseResponse<TResponse>(
         fun <TResponse> setSuccess(data: TResponse): UseCaseResponse<TResponse> =
             UseCaseResponse(UseCaseResponseType.SUCCESS, data = data)
 
+        fun <TResponse> setPersisted(data: TResponse): UseCaseResponse<TResponse> =
+            UseCaseResponse(UseCaseResponseType.CREATED_SUCCESS, data = data)
+
         fun <TResponse> setValidationError(message: String, field: String): UseCaseResponse<TResponse> {
             return UseCaseResponse(UseCaseResponseType.VALIDATION_ERROR, error = ErrorMessage(message, field))
         }

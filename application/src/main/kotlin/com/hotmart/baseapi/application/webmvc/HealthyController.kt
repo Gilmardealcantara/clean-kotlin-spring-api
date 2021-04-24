@@ -1,4 +1,4 @@
-package com.hotmart.baseapi.application.controller
+package com.hotmart.baseapi.application.webmvc
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
