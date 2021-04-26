@@ -39,7 +39,7 @@ internal class PersonControllerTest {
         mockMvc.perform(request)
             .andDo(print())
             .andExpect(status().isOk)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.data").isNotEmpty)
+            .andExpect(MockMvcResultMatchers.jsonPath("$.*").isNotEmpty)
     }
 
     @Test
@@ -55,7 +55,7 @@ internal class PersonControllerTest {
         mockMvc.perform(request)
             .andDo(print())
             .andExpect(status().isCreated)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.data.id").exists())
-            .andExpect(MockMvcResultMatchers.jsonPath("$.data.name").value("new person"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.id").exists())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("new person"))
     }
 }

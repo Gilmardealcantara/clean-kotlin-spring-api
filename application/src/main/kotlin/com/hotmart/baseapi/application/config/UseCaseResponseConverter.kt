@@ -10,10 +10,10 @@ import java.net.URI
 class UseCaseResponseConverter {
     companion object {
         fun convert(response: UseCaseResponse<*>): ResponseEntity<*> = when (response.type) {
-            UseCaseResponseType.SUCCESS -> ResponseEntity.ok(response)
-            UseCaseResponseType.CREATED_SUCCESS -> ResponseEntity.created(URI("")).body(response)
-            UseCaseResponseType.VALIDATION_ERROR -> ResponseEntity.badRequest().body(response)
-            UseCaseResponseType.NOT_FOUND_RESOURCE -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(response)
+            UseCaseResponseType.SUCCESS -> ResponseEntity.ok(response.data)
+            UseCaseResponseType.CREATED_SUCCESS -> ResponseEntity.created(URI("")).body(response.data)
+            UseCaseResponseType.VALIDATION_ERROR -> ResponseEntity.badRequest().body(response.error)
+            UseCaseResponseType.NOT_FOUND_RESOURCE -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(response.error)
             else -> throw IllegalArgumentException("UseCaseResponseType not be converted to application response")
         }
     }
