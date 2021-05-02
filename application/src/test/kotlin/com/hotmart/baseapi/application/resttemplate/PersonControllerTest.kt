@@ -24,7 +24,6 @@ class PersonControllerTest {
 
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
         Assertions.assertThat(response.body).hasSize(3)
-
 //        val data = ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(response.body)
 //        println(data)
     }
