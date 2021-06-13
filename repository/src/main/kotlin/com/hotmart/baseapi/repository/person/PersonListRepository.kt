@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository
 import java.lang.IllegalArgumentException
 import java.util.*
 
-//@Repository
-class PersonListRepository : IPersonRepository {
+@Repository
+open class PersonListRepository : IPersonRepository {
     private val people: MutableList<Person> = mutableListOf(
         Person(UUID.randomUUID(), "Gilmar"),
         Person(UUID.randomUUID(), "Maria"),

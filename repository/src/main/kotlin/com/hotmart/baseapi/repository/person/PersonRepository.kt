@@ -6,7 +6,7 @@ import com.hotmart.baseapi.repository.data.PersonDataMapper
 import org.springframework.stereotype.Repository
 import java.util.*
 
-@Repository
+//@Repository
 open class PersonRepository(
     private val repository: PersonSpringDataRepository
 ) : IPersonRepository {

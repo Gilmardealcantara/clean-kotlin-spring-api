@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @EnableSwagger2
 @Configuration
-open class SwaggerConfiguration {
+class SwaggerConfiguration {
     @Bean
     fun api(): Docket {
         val basePackage = RequestHandlerSelectors.basePackage("com.hotmart.baseapi.application")

@@ -2,10 +2,14 @@ package com.hotmart.baseapi.domain.entity
 
 import java.util.*
 
-class Person(
-    val id: UUID,
-    name: String,
-) {
+class Person(id: UUID, name: String) : BaseEntity(id) {
+    override val actions: List<ResourceAction> = listOf(
+        ResourceAction.LIST_BY_ID,
+        ResourceAction.CREATE,
+        ResourceAction.UPDATE,
+        ResourceAction.DELETE
+    )
+
     var name: String = name
         private set
 
