@@ -23,7 +23,7 @@ class PersonControllerTest {
         val response: ResponseEntity<List<*>> = restTemplate.getForEntity("/persons", List::class.java)
 
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
-        Assertions.assertThat(response.body).hasSize(3)
+        Assertions.assertThat(response.body).hasSizeGreaterThan(3)
 //        val data = ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(response.body)
 //        println(data)
     }
@@ -33,8 +33,7 @@ class PersonControllerTest {
         val person = CreatePersonRequest("Gilmar")
         val entity = HttpEntity<CreatePersonRequest>(person)
 
-        val response: ResponseEntity<PersonResponse> =
-            restTemplate.postForEntity("/persons", entity, PersonResponse::class.java)
+        val response: ResponseEntity<Any> = restTemplate.postForEntity("/persons", entity, Any::class.java)
 
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.CREATED)
         Assertions.assertThat(response.body)
