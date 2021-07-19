@@ -1,4 +1,4 @@
-package com.hotmart.baseapi.repository.data
+package com.hotmart.baseapi.data
 
 import com.hotmart.baseapi.domain.entity.Person
 import java.util.*

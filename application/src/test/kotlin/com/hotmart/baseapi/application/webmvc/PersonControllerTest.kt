@@ -1,7 +1,7 @@
 package com.hotmart.baseapi.application.webmvc
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.hotmart.baseapi.repository.data.PersonDataMapper
+import com.hotmart.baseapi.data.PersonDataMapper
 import com.hotmart.baseapi.repository.person.PersonSpringDataRepository
 import com.hotmart.baseapi.usecase.person.request.CreatePersonRequest
 import org.junit.jupiter.api.Test

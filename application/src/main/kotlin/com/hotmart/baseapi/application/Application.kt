@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @SpringBootApplication
 @EnableJpaRepositories("com.hotmart.baseapi.repository")
-@EntityScan("com.hotmart.baseapi.repository.data")
+@EntityScan("com.hotmart.baseapi.data")
 @ComponentScan(basePackages = [
     "com.hotmart.baseapi.application",
     "com.hotmart.baseapi.usecase",

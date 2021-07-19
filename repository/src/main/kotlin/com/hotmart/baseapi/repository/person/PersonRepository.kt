@@ -2,8 +2,7 @@ package com.hotmart.baseapi.repository.person
 
 import com.hotmart.baseapi.domain.entity.Person
 import com.hotmart.baseapi.domain.service.IPersonRepository
-import com.hotmart.baseapi.repository.data.PersonDataMapper
-import org.springframework.stereotype.Repository
+import com.hotmart.baseapi.data.PersonDataMapper
 import java.util.*
 
 //@Repository
